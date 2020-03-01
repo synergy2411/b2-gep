@@ -2,8 +2,23 @@ import { Component } from '@angular/core';
 
 @Component({
   selector : "app-user",
-  template : `<h3>Hello from User!</h3>`
+  templateUrl : `./user.component.html`
 })
 export class UserComponent{
+
+  user = {
+    firstName : "bill",
+    lastName : "gates",
+    dob : new Date("Dec 21, 1965"),
+    income : 500,
+    isWorking : true,
+    company : "Microsoft",
+    votes : 120,
+    image : "assets/images/bill.jpg"
+  }
+
+  onMoreInfo(user: any){
+    alert(`Hello from ${user.firstName}! Working with ${user.company}!!`);
+  }
 
 }

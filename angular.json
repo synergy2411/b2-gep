@@ -24,6 +24,7 @@
               "projects/users-app/src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/users-app/src/styles.css"
             ],
             "scripts": []
