@@ -11,7 +11,7 @@ import { USER_DATA } from '../../model/mocks';
 export class UserComponent implements OnChanges, OnInit, DoCheck, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
 
-  user : IUser;
+  users : IUser[];
 
   text : string;
   @Input("title") title : string;
@@ -34,7 +34,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
   }
   ngOnInit(){
     // console.log("ngOnInit");
-    this.user = USER_DATA;
+    this.users = USER_DATA;
   }
   ngDoCheck(){
     // console.log("ngDoCheck")

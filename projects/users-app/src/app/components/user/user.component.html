@@ -2,7 +2,14 @@
 <h3>{{ title }}</h3>
 
 <ul class="list-unstyled">
-  <li class="card card-body">
+  <li class="card card-body" *ngFor="let user of users; index as i; first as isfirst; odd as isOdd;">
+
+    <div class="container">
+      Index : {{ i}} <br>
+      Is this First : {{ isfirst }} <br>
+      Is this Odd : {{ isOdd }}
+    </div>
+
     <div class="row">
       <div class="col-sm-3 col-md-3">
         <!-- User image -->
