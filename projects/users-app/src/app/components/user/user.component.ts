@@ -16,9 +16,15 @@ export class UserComponent{
     votes : 120,
     image : "assets/images/bill.jpg"
   }
-
+  text : string;
+  
   onMoreInfo(user: any){
     alert(`Hello from ${user.firstName}! Working with ${user.company}!!`);
   }
+
+  onChildText(text : string){
+    this.text = text;
+  }
+
 
 }
