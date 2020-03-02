@@ -1,20 +1,23 @@
 <div class="container">
-  <h1>Hello World!</h1>
 
-  <ng-template #headerTempl>
-    <h3>This is customed Header!</h3>
-  </ng-template>
+  <button class="btn btn-primary" (click) = "onShowAlert()">Show Alert</button>
 
-  <hr>
-
-  <lib-customized [headerTempl]="headerTempl"
-    (toTheParent) = "fromChild($event)"></lib-customized>
+  <ng-template appPlaceholder></ng-template>
 
 
-  <hr>
+  <!-- Alert box on button click -->
+  <!-- <button class="btn btn-primary" (click) = "showAlert = true">Show Alert</button>
+    <app-alert *ngIf="showAlert" [message]="'This is awesome alert!'" (onAlertClose)="showAlert = false"></app-alert> -->
 
-  <input type="text" [(ngModel)] = "title">
-  <app-user [title]= "title"></app-user>
+  <!-- Customized component from NPM Library -->
+  <!-- <lib-customized [headerTempl]="headerTempl"
+    (toTheParent) = "fromChild($event)"></lib-customized> -->
+  <!-- <ng-template #headerTempl>
+      <h3>This is customed Header!</h3>
+    </ng-template> -->
 
+  <!-- Modify @Input() property in child for ngOnChanges() Demo -->
+  <!-- <input type="text" [(ngModel)] = "title"> -->
 
+  <app-user [title]="title"></app-user>
 </div>
