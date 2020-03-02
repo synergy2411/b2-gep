@@ -1,6 +1,16 @@
 <div class="container">
   <h1>Hello World!</h1>
 
+  <ng-template #headerTempl>
+    <h3>This is customed Header!</h3>
+  </ng-template>
+
+  <hr>
+
+  <lib-customized [headerTempl]="headerTempl"
+    (toTheParent) = "fromChild($event)"></lib-customized>
+
+
   <hr>
 
   <input type="text" [(ngModel)] = "title">
