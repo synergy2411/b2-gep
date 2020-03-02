@@ -30,7 +30,6 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
 
   constructor(private dataService: DataService){
     // console.log("Constructor");
-
   }
 
   ngOnChanges(changes : SimpleChanges){

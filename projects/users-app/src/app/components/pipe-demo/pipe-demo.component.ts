@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PipeDemoComponent{
 
-  contact_num = 987654321;
+  contact_num :string = "987654321";
   filteredStatus : string = "";
 
   todos = [{

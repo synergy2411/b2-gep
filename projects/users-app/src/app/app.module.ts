@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GepUtilLibModule } from 'my-gep-util';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -14,6 +14,10 @@ import { PlaceholderDirective } from './directives/placeholder.directive';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { NationaCodePipe } from './pipes/nationalcode.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
+import { LoggerInterceptorService } from './services/logger.interceptor';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,19 @@ import { FilterPipe } from './pipes/filter.pipe';
     PlaceholderDirective,
     PipeDemoComponent,
     NationaCodePipe,
-    FilterPipe
+    FilterPipe,
+    ObservableDemoComponent
   ],
   imports: [
     BrowserModule, FormsModule, GepUtilLibModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass : LoggerInterceptorService,
+    multi : true
+  }],
   entryComponents :     [AlertComponent],
   bootstrap: [AppComponent]
 })
