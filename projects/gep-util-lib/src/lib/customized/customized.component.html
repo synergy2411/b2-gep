@@ -1,0 +1,7 @@
+<ng-template #defaultTemplate>
+  <h3>Default Template Loaded!</h3>
+</ng-template>
+
+<ng-container
+  *ngTemplateOutlet="headerTempl ? headerTempl : defaultTemplate"
+></ng-container>

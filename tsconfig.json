@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "gep-util-lib": [
+        "dist/gep-util-lib"
+      ],
+      "gep-util-lib/*": [
+        "dist/gep-util-lib/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

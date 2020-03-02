@@ -6,7 +6,12 @@ import { USER_DATA } from '../../model/mocks';
 
 @Component({
   selector : "app-user",
-  templateUrl : `./user.component.html`
+  templateUrl : `./user.component.html`,
+  styles: [`
+    ul li{
+      margin-bottom : 8px;
+    }
+  `]
 })
 export class UserComponent implements OnChanges, OnInit, DoCheck, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
