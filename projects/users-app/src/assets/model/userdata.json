@@ -1,0 +1,34 @@
+{
+  "userdata": [
+    {
+      "firstName": "bill",
+      "lastName": "gates",
+      "dob": "1965-12-20T18:30:00.000Z",
+      "income": 500,
+      "isWorking": true,
+      "company": "Microsoft",
+      "votes": 120,
+      "image": "assets/images/bill.jpg"
+    },
+    {
+      "firstName": "steve",
+      "lastName": "jobs",
+      "dob": "1964-12-31T18:30:00.000Z",
+      "income": 0,
+      "isWorking": false,
+      "company": "Apple",
+      "votes": 180,
+      "image": "assets/images/steve.jpg"
+    },
+    {
+      "firstName": "tim b.",
+      "lastName": "lee",
+      "dob": "1965-07-31T18:30:00.000Z",
+      "income": 200,
+      "isWorking": true,
+      "company": "World Wide Web",
+      "votes": 125,
+      "image": "assets/images/tim.jpg"
+    }
+  ]
+}

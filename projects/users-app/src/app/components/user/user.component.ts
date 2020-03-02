@@ -1,8 +1,7 @@
-import { Component, OnChanges, OnInit, DoCheck, AfterContentInit,
-   AfterContentChecked, AfterViewInit, AfterViewChecked,
-   OnDestroy, Input, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { IUser } from '../../model/user';
-import { USER_DATA } from '../../model/mocks';
+import { DataService } from '../../services/data.service';
+// import { USER_DATA } from '../../model/mocks';
 
 @Component({
   selector : "app-user",
@@ -29,7 +28,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
     this.text = text;
   }
 
-  constructor(){
+  constructor(private dataService: DataService){
     // console.log("Constructor");
 
   }
@@ -38,8 +37,13 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
     // console.log("ngOnChanges", changes);
   }
   ngOnInit(){
+    // this.users = this.dataService.getUserData();
+    this.dataService.getApiData()
+      .subscribe(response => {
+        this.users = <IUser[]>response['userdata']
+      });
     // console.log("ngOnInit");
-    this.users = USER_DATA;
+    // this.users = USER_DATA;
   }
   ngDoCheck(){
     // console.log("ngDoCheck")

@@ -1,11 +1,11 @@
 <!-- <ng-content select="header"></ng-content> -->
 
-<h3 appHighlight>{{ user.firstName }} {{ user.lastName }}</h3>
+<h3 appHighlight>{{ user.firstName | uppercase}} {{ user.lastName | uppercase}}</h3>
 
 
 <!-- <p [ngClass]= "['feature', 'my-border']">Date of Birth : <span [innerHTML]="user.dob"></span></p> -->
 <p [ngClass]= "dynamicClasses" (mousedown) = "onToggle()">
-  Date of Birth : <span [innerHTML]="user.dob"></span>
+  Date of Birth : <span [innerHTML]="user.dob | date : 'MM/dd/yyyy'"></span>
 </p>
 
 
@@ -23,11 +23,11 @@
 
 
 <ng-template #myThenTemplate>
-  <p>Income : {{ user.income }}</p>
+  <p>Income : {{ user.income | currency : 'EUR'}}</p>
 </ng-template>
 
 <ng-template #myElseTemplate>
-  <p>Mr. {{ user.lastName }} is not working now!</p>
+  <p>Mr. {{ user.lastName  | titlecase}} is not working now!</p>
 </ng-template>
 
 <!-- <ng-content></ng-content> -->
