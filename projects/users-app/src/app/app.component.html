@@ -1,8 +1,13 @@
 <div class="container">
 
+  <app-header></app-header>
+
+  <br><br>
+
+  <router-outlet></router-outlet>
 
   <!-- Observable Demo -->
-  <app-observable-demo></app-observable-demo>
+  <!-- <app-observable-demo></app-observable-demo> -->
 
   <!-- Pipe demo -->
   <!-- <app-pipe-demo></app-pipe-demo> -->
@@ -28,5 +33,5 @@
   <!-- Modify @Input() property in child for ngOnChanges() Demo -->
   <!-- <input type="text" [(ngModel)] = "title"> -->
 
-  <app-user [title]="title"></app-user>
+  <!-- <app-user [title]="title"></app-user> -->
 </div>

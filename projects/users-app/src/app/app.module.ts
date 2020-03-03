@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GepUtilLibModule } from 'my-gep-util';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -18,6 +19,8 @@ import { ObservableDemoComponent } from './components/observable-demo/observable
 import { LoggerInterceptorService } from './services/logger.interceptor';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { APP_ROUTES } from './app.routing';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,13 @@ import { environment } from '../environments/environment';
     PipeDemoComponent,
     NationaCodePipe,
     FilterPipe,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule, FormsModule, GepUtilLibModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{
