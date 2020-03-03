@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GepUtilLibModule } from 'my-gep-util';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { EmployeeModule } from './employee/employee.module';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -21,6 +22,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
+import { OverviewComponent } from './components/product/overview/overview.component';
+import { SpecificationComponent } from './components/product/specification/specification.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +36,16 @@ import { HeaderComponent } from './components/header/header.component';
     NationaCodePipe,
     FilterPipe,
     ObservableDemoComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent,
+    OverviewComponent,
+    SpecificationComponent
   ],
   imports: [
     BrowserModule, FormsModule, GepUtilLibModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forRoot(APP_ROUTES, { preloadingStrategy : PreloadAllModules}),
+    EmployeeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{

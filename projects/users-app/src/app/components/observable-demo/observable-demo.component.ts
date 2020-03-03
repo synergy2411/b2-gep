@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-observable-demo',
@@ -44,6 +45,27 @@ export class ObservableDemoComponent {
   onUnsubscribe(){
     this.unSub.unsubscribe();
   }
+
+  constructor( private router : Router){}
+
+  onNavigate(){
+    this.router.navigate(['/user'],);
+    // this.router.navigateByUrl()
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

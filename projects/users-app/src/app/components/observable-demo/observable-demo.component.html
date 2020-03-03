@@ -1,8 +1,12 @@
 
-<button class="btn primary" (click)= "onSubscribe()">Subscribe</button>
-<button class="btn primary" (click)= "onUnsubscribe()">Unsubscribe</button>
+<button class="btn btn-primary" (click)= "onSubscribe()">Subscribe</button>
+<button class="btn btn-primary" (click)= "onUnsubscribe()">Unsubscribe</button>
   <br>
-  
+
+  <button class="btn btn-success" (click) = "onNavigate()"><span class="badge badge-dark">
+    Navigate to User
+  </span></button>
+
 <ul>
   <li *ngFor="let pkg of pkgs">
     {{ pkg }}
