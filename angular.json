@@ -25,6 +25,7 @@
               "projects/users-app/src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/users-app/src/styles.css"
             ],
@@ -94,6 +95,7 @@
               "projects/users-app/src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/users-app/src/styles.css"
             ],
             "scripts": []
@@ -160,6 +162,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "users-app"
 }
